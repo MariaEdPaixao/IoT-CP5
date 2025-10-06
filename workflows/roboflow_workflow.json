@@ -1,0 +1,65 @@
+{
+  "version": "1.0",
+  "inputs": [
+    { "type": "InferenceImage", "name": "image" }
+  ],
+  "steps": [
+    {
+      "type": "roboflow_core/roboflow_object_detection_model@v1",
+      "name": "model",
+      "images": "$inputs.image",
+      "model_id": "license-plate-recognition-rxg4e/11"
+    },
+    {
+      "type": "roboflow_core/bounding_box_visualization@v1",
+      "name": "detection_visualization",
+      "image": "$inputs.image",
+      "predictions": "$steps.model.predictions"
+    },
+    {
+      "type": "roboflow_core/dynamic_crop@v1",
+      "name": "dynamic_crop",
+      "images": "$inputs.image",
+      "predictions": "$steps.model.predictions"
+    },
+    {
+      "type": "roboflow_core/label_visualization@v1",
+      "name": "annotated_image",
+      "image": "$steps.detection_visualization.image",
+      "predictions": "$steps.model.predictions"
+    },
+    {
+      "type": "roboflow_core/google_gemini@v1",
+      "name": "google_gemini",
+      "images": "$steps.dynamic_crop.crops",
+      "api_key": "${GEMINI_API_KEY}",
+      "task_type": "ocr"
+    }
+  ],
+  "outputs": [
+    {
+      "type": "JsonField",
+      "name": "output_openai_replacement",
+      "coordinates_system": "own",
+      "selector": "$steps.google_gemini.output"
+    },
+    {
+      "type": "JsonField",
+      "name": "output_image",
+      "coordinates_system": "own",
+      "selector": "$steps.annotated_image.image"
+    },
+    {
+      "type": "JsonField",
+      "name": "predictions",
+      "coordinates_system": "own",
+      "selector": "$steps.model.predictions"
+    },
+    {
+      "type": "JsonField",
+      "name": "dynamic_crop",
+      "coordinates_system": "own",
+      "selector": "$steps.dynamic_crop.crops"
+    }
+  ]
+}
