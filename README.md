@@ -4,15 +4,18 @@
 Demonstrar duas abordagens de Visão Computacional para detecção de placas de motos brasileiras e OCR para extrair os dados desta placa, além de um exemplo de redes neurais em Keras.
 
 ## Estrutura
-- CP5_AzureVC_2parte.ipynb (Hugging Face + Azure OCR)
-- FINAL_Exemplo_Redes_Neurais_Com_Keras.ipynb (referência Parte 01)
 - notebooks/
+  - CP5_AzureVC_2parte.ipynb (Hugging Face + Azure OCR)
   - roboflow_workflow_runner.py (execução de workflow do Roboflow via API)
 - workflows/
   - roboflow_workflow.json (workflow sanitizado — usa variável de ambiente GEMINI_API_KEY)
 - results/
   - Evidências geradas (imagens e métricas)
+- images/
+  - Arquivos de imagem de exemplo e/ou capturas (opcional)
+- FINAL_Exemplo_Redes_Neurais_Com_Keras.ipynb (referência Parte 01)
 - print_moto_placa.png (imagem de teste)
+- README.md
 
 ## Ferramentas (2 escolhidas)
 - Microsoft Azure Computer Vision – OCR (Image Analysis READ)
@@ -21,21 +24,21 @@ Demonstrar duas abordagens de Visão Computacional para detecção de placas de 
 Opcional/documentado: Roboflow (workflow de inferência e OCR de placa)
 
 ## Dataset/Imagens
-- Imagem de teste local: print_moto_placa.png
+- Imagem de teste local: `print_moto_placa.png`
+- Dataset utilizado (link público — Roboflow/Kaggle/Drive): <insira o link aqui>
 
 ## Hiperparâmetros e configs principais
-- Modelo: nickmuchi/yolos-small-finetuned-license-plate-detection
-- Threshold de detecção: 0.5
+- Modelo: `nickmuchi/yolos-small-finetuned-license-plate-detection`
+- Threshold de detecção: `0.5`
 - Pré-processamento: conversão para RGB, crop dinâmico da placa
 - OCR: Azure AI Vision Image Analysis (READ)
 
 ## Como executar (Colab ou local)
 1. Defina variáveis de ambiente (ou .env) para o Azure e Roboflow:
-   - VISION_ENDPOINT
-   - VISION_KEY
-   - ROBOFLOW_API_KEY (opcional para workflow)
-   - GEMINI_API_KEY (se usar OCR do workflow Roboflow)
-2. Execute o notebook `CP5_AzureVC_2parte.ipynb`.
+   - `VISION_ENDPOINT`
+   - `VISION_KEY`
+   - `GEMINI_API_KEY` (se usar OCR do workflow Roboflow)
+2. Execute o notebook `notebooks/CP5_AzureVC_2parte.ipynb`.
 3. Resultados serão salvos em `results/`.
 4. (Opcional) Execute o script do Roboflow em `notebooks/roboflow_workflow_runner.py` para gerar `results/roboflow_output.json` e imagens.
 
