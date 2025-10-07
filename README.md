@@ -1,59 +1,145 @@
-# IoT-CP5: Redes Neurais e Visão Computacional
+# 🚀 IoT-CP5: Redes Neurais e Visão Computacional
 
-## Objetivo
-Demonstrar duas abordagens de Visão Computacional para detecção de placas de motos brasileiras e OCR para extrair os dados desta placa, além de um exemplo de redes neurais em Keras.
+## 🎯 Objetivo do Projeto
+Este projeto demonstra duas abordagens complementares de **Visão Computacional** aplicadas à **detecção e leitura de placas de motocicletas brasileiras**, além de um **exemplo de rede neural desenvolvida em Keras** (Parte 1 da CP5).
 
-## Estrutura
-- notebooks/
-  - CP5_AzureVC_2parte.ipynb (Hugging Face + Azure OCR)
-  - roboflow_workflow_runner.py (execução de workflow do Roboflow via API)
-- workflows/
-  - roboflow_workflow.json (workflow sanitizado — usa variável de ambiente GEMINI_API_KEY)
-- results/
-  - Evidências geradas (imagens e métricas)
-- images/
-  - Arquivos de imagem de exemplo e/ou capturas (opcional)
-- FINAL_Exemplo_Redes_Neurais_Com_Keras.ipynb (referência Parte 01)
-- print_moto_placa.png (imagem de teste)
-- README.md
+As soluções exploram:
+1. 🧠 **Redes Neurais com Keras**  
+2. 👁️ **Detecção e OCR com Hugging Face + Azure Vision**  
+3. 🧩 **Workflow Roboflow** (fornecido em JSON para replicação)
 
-## Ferramentas (2 escolhidas)
-- Microsoft Azure Computer Vision – OCR (Image Analysis READ)
-- Hugging Face – modelo YOLOS para detecção de placas
+---
 
-Opcional/documentado: Roboflow (workflow de inferência e OCR de placa)
+## 🧠 Parte 01 – Redes Neurais (Keras)
+`colocar primeira parte aqui` 
 
-## Dataset/Imagens
-- Imagem de teste local: `print_moto_placa.png`
-- Dataset utilizado (link público — Roboflow/Kaggle/Drive): <insira o link aqui>
+---
 
-## Hiperparâmetros e configs principais
-- Modelo: `nickmuchi/yolos-small-finetuned-license-plate-detection`
-- Threshold de detecção: `0.5`
-- Pré-processamento: conversão para RGB, crop dinâmico da placa
-- OCR: Azure AI Vision Image Analysis (READ)
+## 👁️ Parte 02 – Visão Computacional
+Comparação entre duas ferramentas distintas aplicadas ao mesmo objetivo: **detectar e ler placas de veículos**.
 
-## Como executar (Colab ou local)
-1. Defina variáveis de ambiente (ou .env) para o Azure e Roboflow:
-   - `VISION_ENDPOINT`
-   - `VISION_KEY`
-   - `GEMINI_API_KEY` (se usar OCR do workflow Roboflow)
-2. Execute o notebook `notebooks/CP5_AzureVC_2parte.ipynb`.
-3. Resultados serão salvos em `results/`.
-4. (Opcional) Execute o script do Roboflow em `notebooks/roboflow_workflow_runner.py` para gerar `results/roboflow_output.json` e imagens.
+### 🧰 Ferramentas Utilizadas
+| Ferramenta | Uso Principal | Descrição |
+|-------------|----------------|------------|
+| 🤗 **Hugging Face (YOLOS)** | Detecção de placas | Modelo pré-treinado `nickmuchi/yolos-small-finetuned-license-plate-detection` |
+| ☁️ **Microsoft Azure Computer Vision** | OCR (Image Analysis - READ API) | Extração de texto da placa detectada |
+| 🧩 **Roboflow** | Workflow de visão e OCR | JSON disponível para replicação na plataforma Roboflow |
 
-## Comparativo resumido
-- Hugging Face + Azure:
-  - Vantagens: flexibilidade, fácil trocar modelos, OCR robusto.
-  - Desvantagens: integrações múltiplas, custo do serviço OCR.
-- Roboflow Workflow:
-  - Vantagens: pipeline pronto de visão + OCR, fácil compartilhar.
-  - Desvantagens: dependência de serviço externo e chaves; latência variável.
+---
 
-Métricas coletadas (salvas em `results/metrics_hf_azure.json`): latência da detecção, nº de caixas e confiança média, latência do OCR.
+## 📁 Estrutura do Repositório
+```
+IoT-CP5/
+├── notebooks/
+│ └── CP5_AzureVC_2parte.ipynb # Detecção e OCR (Hugging Face + Azure)
+├── workflows/
+│ └── roboflow_workflow.json # Workflow exportável (para uso na plataforma Roboflow)
+├── results/
+│ ├── original_with_bbox.png
+│ ├── cropped_plate.png
+│ ├── ocr_plate.txt
+│ └── metrics_hf_azure.json
+├── images/
+│ └── print_moto_placa.png # Imagem de teste
+├── FINAL_Exemplo_Redes_Neurais_Com_Keras.ipynb
+└── README.md
+```
+---
 
-## Resultados e observações
-- Imagens geradas: `results/original_with_bbox.png`, `results/cropped_plate.png`
-- Texto OCR: `results/ocr_plate.txt`
-- Métricas: `results/metrics_hf_azure.json`
+## 🧩 Dataset / Imagens
+- 📸 Imagem de teste: `images/print_moto_placa.png`  
+- 📚 Dataset público (Roboflow / Kaggle / Drive):  
+  👉 [Roboflow Universe Dataset's](https://universe.roboflow.com/zeroexperiments/motorcycle-license-plate-skrdr)
+
+---
+
+## ⚙️ Hiperparâmetros e Configurações Principais (Visão Computacional)
+| Parâmetro | Valor | Descrição |
+|------------|--------|-----------|
+| Modelo | `nickmuchi/yolos-small-finetuned-license-plate-detection` | Detecção de placas |
+| Threshold de confiança | `0.5` | Filtro mínimo de detecção |
+| Pré-processamento | Conversão RGB + crop dinâmico | Otimiza a entrada do OCR |
+| OCR | Azure AI Vision Image Analysis (READ) | Extração de caracteres da placa |
+
+---
+
+## ▶️ Como Executar
+
+### 🔧 Configuração de Ambiente
+Defina suas variáveis de ambiente no sistema ou `.env`:
+```bash
+VISION_ENDPOINT=<seu_endpoint_azure>
+VISION_KEY=<sua_chave_azure>
+GEMINI_API_KEY=<sua_chave_gemini>
+```
+### 💻 Execução
+
+1. Execute o notebook principal:
+ ```bash
+  notebooks/CP5_AzureVC_2parte.ipynb
+```
+2. Os resultados e métricas serão gerados na pasta `results/`.
+
+---
+
+🌐 Testar o Workflow do Roboflow
+
+Para testar a abordagem alternativa:
+
+1. Acesse Roboflow
+
+2. Crie um novo Workflow.
+
+3. Copie o conteúdo do arquivo: `workflows/roboflow_workflow.json`
+  e cole na interface da plataforma.
+
+⚖️ Comparativo entre as Abordagens
+| Critério              | 🤗 Hugging Face + Azure                 | 🧩 Roboflow                            |
+| --------------------- | --------------------------------------- | -------------------------------------- |
+| **Configuração**      | Executado localmente via notebook       | Interface visual, executado em nuvem   |
+| **Flexibilidade**     | Alta – livre escolha de modelo e OCR    | Média – depende do pipeline criado     |
+| **OCR**               | Azure Vision (alta precisão)            | OCR integrado (precisão variável)      |
+| **Latência média**    | ~2 segundos / imagem                    | ~4–5 segundos / imagem                 |
+| **Custo**             | OCR pago por requisição                 | Gratuito até certo limite              |
+| **Reprodutibilidade** | Notebook Python (totalmente replicável) | Workflow JSON (copiável na plataforma) |
+
+---
+
+## 📊 Resultados e Observações
+
+📂 Resultados salvos em results/:
+
+original_with_bbox.png → imagem com bounding box
+
+cropped_plate.png → recorte da placa
+
+ocr_plate.txt → texto lido via OCR
+
+metrics_hf_azure.json → métricas de latência e confiança
+
+## 🧩 Conclusões
+
+O modelo YOLOS apresentou alta precisão em placas no padrão Mercosul.
+
+O OCR do Azure demonstrou robustez mesmo sob variação de iluminação.
+
+O Roboflow se mostrou útil para validação rápida e replicação do pipeline.
+
+---
+
+## 🎥 Vídeo de Demonstração
+
+👉 Assista à demonstração no YouTube (modo não listado)
+
+---
+
+### 🏆 Integrantes
+
+| Nome | RM | GitHub |
+|------|----|---------|
+| **Laura de Oliveira Cintra** | RM 558843 | [@lauracintra](https://github.com/Laura-Cintra) 
+| **Maria Eduarda Alves da Paixão** | RM 558832 | [@mariaeduarda](https://github.com/MariaEdPaixao) 
+| **Vinícius Saes de Souza** | RM 554456 | [@viniciussaes](https://github.com/ViniciuSaeSouza) 
+
+✨ Projeto desenvolvido como parte da disciplina Disruptive Architectures: IoT, IoB & Generative AI – FIAP 2025.
 
