@@ -48,7 +48,7 @@ IoT-CP5/
 
 ## 🧩 Dataset / Imagens
 - 📸 Imagem de teste: `images/print_moto_placa.png`  
-- 📚 Dataset público (Roboflow / Kaggle / Drive):  
+- 📚 Dataset público (Roboflow):  
   👉 [Roboflow Universe Dataset's](https://universe.roboflow.com/zeroexperiments/motorcycle-license-plate-skrdr)
 
 ---
