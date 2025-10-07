@@ -129,7 +129,7 @@ O Roboflow se mostrou útil para validação rápida e replicação do pipeline.
 
 ## 🎥 Vídeo de Demonstração
 
-👉 Assista à demonstração no YouTube (modo não listado)
+👉 Assista à demonstração no [YouTube](https://youtu.be/cPnyaplA49Ahttps://youtu.be/cPnyaplA49A)
 
 ---
 
