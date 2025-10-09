@@ -11,7 +11,19 @@ As soluções exploram:
 ---
 
 ## 🧠 Parte 01 – Redes Neurais (Keras)
-`colocar primeira parte aqui` 
+### Exercício 1 – Classificação Multiclasse (Wine Dataset - UCI)
+
+Neste exercício foi desenvolvida uma rede neural utilizando Keras para classificar vinhos em três classes, com base em 13 características físico-químicas do dataset Wine (UCI), **carregado pelo método load_wine do Scikit-learn.**
+A rede neural foi configurada com:
+* 2 camadas ocultas com 32 neurônios cada;
+* Função de ativação ReLU nas camadas ocultas;
+* Camada de saída com 3 neurônios e ativação Softmax;
+* Função de perda categorical_crossentropy;
+* Otimizador Adam.
+
+Para comparação, também foram treinados os modelos RandomForestClassifier e LogisticRegression.
+Os resultados mostraram que a **Rede Neural** e o **Random Forest** obtiveram **100% de acurácia**, enquanto a **Regressão Logística** atingiu **97,22%**.
+No geral, ambos os primeiros tiveram o melhor desempenho, com o Random Forest sendo mais simples de treinar e interpretar.
 
 ---
 
