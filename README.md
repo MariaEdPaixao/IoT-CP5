@@ -161,11 +161,11 @@ O Roboflow se mostrou útil para validação rápida e replicação do pipeline.
 
 ### 🏆 Integrantes
 
-| Nome | RM | GitHub |
-|------|----|---------|
-| **Laura de Oliveira Cintra** | RM 558843 | [@lauracintra](https://github.com/Laura-Cintra) 
-| **Maria Eduarda Alves da Paixão** | RM 558832 | [@mariaeduarda](https://github.com/MariaEdPaixao) 
-| **Vinícius Saes de Souza** | RM 554456 | [@viniciussaes](https://github.com/ViniciuSaeSouza) 
+| Nome                              | RM     | GitHub                                             |
+| --------------------------------- | ------ | -------------------------------------------------- |
+| **Laura de Oliveira Cintra**      | 558843 | [@Laura-Cintra](https://github.com/Laura-Cintra)   |
+| **Maria Eduarda Alves da Paixão** | 558832 | [@MariaEdPaixao](https://github.com/MariaEdPaixao) |
+| **Vinícius Saes de Souza**        | 554456 | [@ViniciuSaeSouza](https://github.com/ViniciuSaeSouza) |
 
 ✨ Projeto desenvolvido como parte da disciplina Disruptive Architectures: IoT, IoB & Generative AI – FIAP 2025.
 
