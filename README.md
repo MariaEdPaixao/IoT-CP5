@@ -27,6 +27,20 @@ No geral, ambos os primeiros tiveram o melhor desempenho, com o Random Forest se
 
 ---
 
+### Exercício 2 – Regressão (California Housing Dataset)
+
+Neste exercício, o objetivo foi treinar uma rede neural em Keras para realizar uma tarefa de **regressão**, prevendo o valor médio das casas no *California Housing Dataset*.
+A rede neural foi configurada com:
+* 3 camadas ocultas (64, 32 e 16 neurônios) com função de ativação ReLU;
+* Camada de saída com 1 neurônio e ativação Linear (adequada para prever um valor contínuo);
+* Função de perda Mean Squared Error (MSE);
+* Otimizador Adam.
+
+Para comparação, também foram utilizados os modelos Scikit-learn LinearRegression e RandomForestRegressor.
+Os resultados foram avaliados pelas métricas de erro **RMSE** e **MAE**. O **Random Forest Regressor** alcançou o melhor desempenho, com os menores erros (RMSE: $0.1857$, MAE: $0.1210$). No entanto, a **Rede Neural em Keras** demonstrou um desempenho robusto (RMSE: $0.5356$, MAE: $0.3625$), superando de forma significativa o modelo de **Regressão Linear** (RMSE: $0.7197$, MAE: $0.5286$). O resultado da Keras valida a eficácia da arquitetura neural para capturar as complexas relações presentes no dataset.
+
+---
+
 ## 👁️ Parte 02 – Visão Computacional
 Comparação entre duas ferramentas distintas aplicadas ao mesmo objetivo: **detectar e ler placas de veículos**.
 
