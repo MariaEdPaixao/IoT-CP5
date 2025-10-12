@@ -59,18 +59,14 @@ Comparação entre duas ferramentas distintas aplicadas ao mesmo objetivo: **det
 ```
 IoT-CP5/
 ├── notebooks/
-│ └── CP5_AzureVC_2parte.ipynb # Detecção e OCR (Hugging Face + Azure)
+│   ├── cp2_redes_neurais_com_keras.ipynb   # Rede Neural (Keras)
+│   └── CP5_AzureVC_2parte.ipynb            # Detecção e OCR (Hugging Face + Azure)
 ├── workflows/
-│ └── roboflow_workflow.json # Workflow exportável (para uso na plataforma Roboflow)
-├── results/
-│ ├── original_with_bbox.png
-│ ├── cropped_plate.png
-│ ├── ocr_plate.txt
-│ └── metrics_hf_azure.json
+│   └── roboflow_workflow.json              # Workflow exportável (para uso na plataforma Roboflow)
 ├── images/
-│ └── print_moto_placa.png # Imagem de teste
-├── FINAL_Exemplo_Redes_Neurais_Com_Keras.ipynb
-└── README.md
+│   └── print_moto_placa.png                # Imagem de teste
+├── CP2_P01_REDES_NEURAIS_COM_KERAS.pdf     # Material de apoio
+└── README.md                               # Documentação
 ```
 ---
 
@@ -170,4 +166,3 @@ O Roboflow se mostrou útil para validação rápida e replicação do pipeline.
 | **Vinícius Saes de Souza**        | 554456 | [@ViniciuSaeSouza](https://github.com/ViniciuSaeSouza) |
 
 ✨ Projeto desenvolvido como parte da disciplina Disruptive Architectures: IoT, IoB & Generative AI – FIAP 2025.
-
